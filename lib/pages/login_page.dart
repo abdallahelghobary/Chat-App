@@ -1,4 +1,3 @@
-import 'package:chat_app/pages/regester_page.dart';
 import 'package:chat_app/widget/custom_button.dart';
 import 'package:chat_app/widget/custom_input_text.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +28,7 @@ class LoginPage extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Sign In',
+                  'LOGIN',
                   style: TextStyle(
                     fontSize: 24,
                     fontFamily: 'pacifico',
@@ -45,7 +44,7 @@ class LoginPage extends StatelessWidget {
             CustomInputText(hientText: 'Password'),
             const SizedBox(height: 18),
 
-            CustomButton(title: 'Login',),
+            CustomButton(title: 'Login'),
             const SizedBox(height: 20),
 
             Row(
@@ -58,14 +57,7 @@ class LoginPage extends StatelessWidget {
 
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return RegesterPage();
-                        },
-                      ),
-                    );
+                    Navigator.pushNamed(context, 'RegisterPage');
                   },
 
                   child: Text(

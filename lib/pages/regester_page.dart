@@ -1,10 +1,9 @@
-import 'package:chat_app/pages/login_page.dart';
 import 'package:chat_app/widget/custom_button.dart';
 import 'package:chat_app/widget/custom_input_text.dart';
 import 'package:flutter/material.dart';
 
-class RegesterPage extends StatelessWidget {
-  const RegesterPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,18 +56,14 @@ class RegesterPage extends StatelessWidget {
                 ),
 
                 GestureDetector(
-                  
-                   onTap: () {
-                    Navigator.pop(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return LoginPage();
-                        },
-                      ),
-                    );
+                  onTap: () {
+                    Navigator.pop(context);
                   },
-                  child: Text(' Sign In', style: TextStyle(color: Color(0xff156398)))),
+                  child: Text(
+                    '  Login',
+                    style: TextStyle(color: Color(0xff156398),fontSize: 16),
+                  ),
+                ),
               ],
             ),
             Spacer(flex: 3),
