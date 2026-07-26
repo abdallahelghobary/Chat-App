@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomInputText extends StatelessWidget {
-  const CustomInputText({super.key, required this.hientText});
+ const  CustomInputText({super.key, required this.hientText,this.onChange});
   final String hientText;
-
+ final Function(String)? onChange;
   @override
   Widget build(BuildContext context) {
     return TextField(
+
+      onChanged:onChange ,
       cursorColor: Colors.amber,
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
