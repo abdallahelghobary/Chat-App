@@ -1,4 +1,5 @@
 import 'package:chat_app/constant.dart';
+import 'package:chat_app/helper/show_snack_bar.dart';
 import 'package:chat_app/widget/custom_button.dart';
 import 'package:chat_app/widget/custom_input_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegisterPage extends StatefulWidget {
-  RegisterPage({super.key, this.email, this.password});
+  RegisterPage({super.key});
 
   static String id = 'registerPage';
   String? email;
@@ -101,7 +102,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       } catch (ex) {
                         showSnackBar(context, 'There Was Error');
                       }
-
                       isLoading = false;
 
                       setState(() {});
@@ -142,11 +142,7 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  void showSnackBar(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message), backgroundColor: Colors.purple),
-    );
-  }
+  
 
   Future<UserCredential> registerUser() async {
     var auth = FirebaseAuth.instance;
